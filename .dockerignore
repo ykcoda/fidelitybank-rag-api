@@ -39,6 +39,7 @@ docker-compose.*.yml
 
 # Local databases / data
 *.sqlite
+*.sqlite3
 *.db
 
 # Alembic compiled files (safe to ignore)
