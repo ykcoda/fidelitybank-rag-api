@@ -61,6 +61,14 @@
         "documentation": {}
     },
     {
+        "label": "VectorDB",
+        "importPath": "test",
+        "description": "test",
+        "isExtraImport": true,
+        "detail": "test",
+        "documentation": {}
+    },
+    {
         "label": "bin_dir",
         "kind": 5,
         "importPath": ".venv.bin.activate_this",
@@ -146,7 +154,7 @@
         "kind": 6,
         "importPath": "test",
         "description": "test",
-        "peekOfCode": "class VectorDB:\n    def __init__(\n        self, collection_name: str, host: str = \"\", port: int = 0, path: str = \"\"\n    ):\n        # self.client = chromadb.HttpClient(host=host, port=port)\n        self.client = chromadb.PersistentClient(path=path)\n        self.collection_name = collection_name\n        self.collection = self.client.get_or_create_collection(self.collection_name)\n    def add_document(self, ids: list[str], documents: list[str]):\n        self.collection.add(ids=ids, documents=documents)",
+        "peekOfCode": "class VectorDB:\n    def __init__(\n        self, collection_name: str, host: str = \"\", port: int = 0, path: str = \"\"\n    ):\n        # self.client = chromadb.HttpClient(host=host, port=port)\n        self.client = chromadb.PersistentClient(path=path)\n        self.collection_name = collection_name\n        self.collection = self.client.get_or_create_collection(self.collection_name)\n    def add_document(self, ids: list[str], documents: list[str], metadatas):\n        self.collection.add(ids=ids, documents=documents, metadatas=metadatas)",
         "detail": "test",
         "documentation": {}
     },
@@ -155,8 +163,17 @@
         "kind": 2,
         "importPath": "test",
         "description": "test",
-        "peekOfCode": "def main():\n    vector_db = VectorDB(collection_name=\"fbl_documents\", path=\"db\")\n    #################ADD#####################################\n    # vector_db.add_document(\n    #     [\"car1\", \"plane1\", \"boat1\", \"bus1\"],\n    #     [\n    #         \"Car runs on land\",\n    #         \"Plane flies in the sly\",\n    #         \"Boat travels on water\",\n    #         \"Bus is public trasport on road\",",
+        "peekOfCode": "def main():\n    vector_db = VectorDB(collection_name=\"fbl_documents\", path=\"db\")\n    #################ADD#####################################\n    # vector_db.add_document(\n    #     [\"car1\", \"plane1\", \"boat1\", \"bus1\"],\n    #     [\n    #         \"Bus carries passengers on road\",\n    #         \"Plane flies across countries\",\n    #         \"Boat travels on water\",\n    #         \"Bicycle runs without fuel\",",
         "detail": "test",
+        "documentation": {}
+    },
+    {
+        "label": "new_collection",
+        "kind": 5,
+        "importPath": "test_lab",
+        "description": "test_lab",
+        "peekOfCode": "new_collection = VectorDB(\"ykcoda_collection\", path=\"db\")",
+        "detail": "test_lab",
         "documentation": {}
     }
 ]
